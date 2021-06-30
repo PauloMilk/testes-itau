@@ -15,3 +15,18 @@ spring:
         web-allow-others: false
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+  
+  rabbitmq:
+    request:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      exchange:
+        producer: ex.producer.boleto
+      routing-key:
+        producer: rk.producer.boleto
+      dead-letter:
+        producer: dl.producer.boleto
+      parking-lot:
+        producer: pl.producer.boleto
